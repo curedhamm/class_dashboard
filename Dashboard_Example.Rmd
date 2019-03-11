@@ -1,0 +1,73 @@
+---
+title: "Class Dashboard Example"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(DT)
+require(tidyverse)
+```
+
+Sidebar Title {.sidebar}
+========================
+Your text here. You can use markdown syntax, including 
+[links](http://blah.com), *italics*, **bolding**, etc.
+
+# Marijuana {data-icon="fa-cannabis"}
+
+Column {data-width=650}
+----------------------------
+Look at the relation between these two things.
+
+### Chart A
+
+< r code>
+
+> Here's the description for this cool thing.
+
+Column {data-width=350}
+----------------------------
+
+### Chart B
+
+< r code>
+
+### Chart C
+< r code>
+
+# Tobacco {data-icon="fa-smoking"}
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r}
+plot(pressure)
+```
+
+Column {data-width=350 .tabset}
+-----------------------------------------------------------------------
+
+### Chart B
+
+| Adjective |  Thing  |
+|-----------|---------|
+|    Dope   |rmarkdown|
+
+```{r}
+ggplot(mpg, aes(hwy)) +
+  geom_histogram(fill = "cornflowerblue")
+```
+
+### Chart C
+
+```{r}
+
+```
+
+# Alcohol {data-icon="fa-beer"}
